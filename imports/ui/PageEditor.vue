@@ -57,4 +57,8 @@ export default {
 .right {
   right: 0;
 }
+
+iframe {
+    background-color: #fff;
+}
 </style>

@@ -6,7 +6,7 @@
 				<div class="typewriter">
 					<h1>ROBOTARIUM</h1>
 				</div>
-				<h2>Sociaal programmeer atelier voor toekomstige hackertjes</h2>
+				<h2>Sociaal programmeer atelier voor toekomstige hacker(tje)s</h2>
 			</div>
 			<div>
 			<div class="row justify-content-md-center">
