@@ -25,6 +25,11 @@ Vue.use(IconsPlugin)
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
+import Reveal from 'reveal.js'
+Vue.use(Reveal)
+import 'reveal.js/dist/reveal.css'
+import 'reveal.js/dist/theme/white.css'
+
 import App from '../imports/ui/App.vue';
 
 import router from '../imports/router'

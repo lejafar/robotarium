@@ -5,7 +5,11 @@
 </template>
 
 <script>
+import Reveal from 'reveal.js'
 export default {
+	mounted () {
+		Reveal.initialize()
+	}
 };
 </script>
 
@@ -13,12 +17,12 @@ export default {
 
 @font-face {
     font-family: 'PixChicago';
-    src: url('pixChicago.eot');
-    src: url('pixChicago.eot?#iefix') format('embedded-opentype'),
-        url('pixChicago.woff2') format('woff2'),
-        url('pixChicago.woff') format('woff'),
-        url('pixChicago.ttf') format('truetype'),
-        url('pixChicago.svg#pixChicago') format('svg');
+    src: url('/pixChicago.eot');
+    src: url('/pixChicago.eot?#iefix') format('embedded-opentype'),
+        url('/pixChicago.woff2') format('woff2'),
+        url('/pixChicago.woff') format('woff'),
+        url('/pixChicago.ttf') format('truetype'),
+        url('/pixChicago.svg#pixChicago') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
