@@ -6,7 +6,7 @@
 			</div>
 			<div>
 			<div class="row justify-content-md-center">
-				<div class="col-10">
+				<div class="col-11">
                     <blaze-template template="loginButtons" tag="span"></blaze-template>
                     <b-form-file @change="handleSubmit" squared ></b-form-file>
                     <Stl v-for="stl in stls" v-bind:key="stl._id" v-bind:stl="stl" />
