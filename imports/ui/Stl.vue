@@ -8,7 +8,8 @@
         <b-card-body :title="stl.filename">
           <b-card-text>
 			<div class="stl-info">
-				<p>Gemaakt op {{stl.createdAt}}</p>
+				<p>Mesh is opgebouwd uit <b>{{ triangleCount }}</b> driehoeken</p>
+				<p>Gemaakt op {{ stl.createdAt }}</p>
 				<p>door <b>{{owner | creator }}</b></p>
 			</div>
 			<div>
@@ -25,12 +26,16 @@
 <script>
 import { Meteor } from "meteor/meteor";
 import { ModelStl } from 'vue-3d-model';
+import * as Three from "three";
+import { STLLoader } from 'three/examples/jsm/loaders/STLLoader.js';
 
 export default {
   props: ["stl"],
   components: { ModelStl },
   data() {
-    return {};
+    return {
+		triangleCount: 0
+	};
   },
   methods: {
 	remove(){
@@ -38,7 +43,14 @@ export default {
 	},
 	ownedByCurrentUser(){
 		return Meteor.user()._id == this.stl.owner;
+	},
+	readTriangleCount(){
+		var loader = new STLLoader();
+		loader.load(this.stl.content, ( geometry ) => {
+			this.triangleCount = geometry.attributes.position.count / 3
+		});
 	}
+	
   },
   filters: {
 	creator: function(owner){
@@ -58,6 +70,9 @@ export default {
 	owner() {
 	  return Meteor.users.findOne(this.stl.owner);
     }
+  },
+  mounted() {
+	this.readTriangleCount();
   }
 };
 </script>

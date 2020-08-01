@@ -19,7 +19,7 @@
 							<li>
 							3D Printing
 							<ul>
-								<li><router-link to="/slides/3d">Slides</router-link></li>
+								<li><router-link to="/slides/3d" target="_blank">Slides</router-link></li>
 								<li><router-link to="/dingen">Dingen</router-link></li>
 							</ul>
 							</li>
