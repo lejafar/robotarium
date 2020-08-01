@@ -19,8 +19,8 @@ export default new Router({
       component: Landing
     },
     {
-      path: '/stls',
-      name: 'stls',
+      path: '/dingen',
+      name: 'dingen',
       component: Stls
     },
     {

@@ -2,7 +2,7 @@
 	<div class="container">
 		<div class="container">
 			<div class="header">
-                <h1>Stl list</h1>
+                <h1>Dingen</h1>
 			</div>
 			<div>
 			<div class="row justify-content-md-center">

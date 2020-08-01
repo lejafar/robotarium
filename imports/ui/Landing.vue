@@ -14,9 +14,15 @@
 				<b-tabs content-class="mt-3" align="center" class="tabs">
 					<b-tab title="Over" active>
 					<p>Gratis ateliers rond 3D-printing, programmeren, webdesign, electronica en machine learning deze zomer in de Blikfabriek in Hoboken </p></b-tab>
-					<b-tab title="Slides">
+					<b-tab title="Workshops">
 						<ul>
-							<li>3d workshop</li>
+							<li>
+							3D Printing
+							<ul>
+								<li><router-link to="/slides/3d">Slides</router-link></li>
+								<li><router-link to="/dingen">Dingen</router-link></li>
+							</ul>
+							</li>
 							<li>Face Mapping</li>
 							<li>Web Design</li>
 							<li>RF Hacking</li>

@@ -5,11 +5,7 @@
 </template>
 
 <script>
-import Reveal from 'reveal.js'
 export default {
-	mounted () {
-		Reveal.initialize()
-	}
 };
 </script>
 
@@ -48,6 +44,16 @@ body {
 	color: var(--main-fg-color);
 	background-color: var(--main-bg-color);
 	font-size: 1.2rem;
+}
+
+a {
+	color: var(--main-fg-color);
+    background-color: transparent;
+}
+
+a:hover {
+	color: var(--main-fg-color);
+	text-decoration: underline;
 }
 </style>
 

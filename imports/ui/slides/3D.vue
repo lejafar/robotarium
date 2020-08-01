@@ -26,7 +26,6 @@ export default {
   components: {
   },
   mounted() {
-    console.log('mounted');
     Reveal.initialize()
   }
 }
