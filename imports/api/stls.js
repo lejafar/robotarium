@@ -12,17 +12,6 @@ if (Meteor.isServer) {
     });
 }
 
-if (Meteor.isClient) {
- Meteor.subscribe('getUser')
-}
-
-
-if (Meteor.isServer) {
- Meteor.publish('getUser', function(userId) {
-   return Meteor.users.findOne(userId, {fields:{username:1,emails:1}})
- })
-}
-
 Meteor.methods({
     'stls.insert'(filename, content) {
         check(filename, String);
@@ -46,6 +35,9 @@ Meteor.methods({
     },
     'stls.remove'(stlId) {
         check(stlId, String);
+        if (this.userId != Stls.findOne(stlId).owner) {
+            throw new Meteor.Error('not-authorized to remove this part');
+        }
         Stls.remove(stlId);
     },
     'stls.updateContent'(stlId, content) {

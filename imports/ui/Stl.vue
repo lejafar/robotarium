@@ -9,11 +9,11 @@
           <b-card-text>
 			<div class="stl-info">
 				<p>Gemaakt op {{stl.createdAt}}</p>
-				<p>door <b>{{owner && owner.username || owner && owner.services && owner.services.google.email}}</b></p>
+				<p>door <b>{{owner | creator }}</b></p>
 			</div>
 			<div>
 				<b-button :download="stl.filename" :href="stl.content" squared variant="outline-primary">Download</b-button>
-				<b-button @click="remove" squared variant="outline-primary">Verwijderen</b-button>
+				<b-button v-if="ownedByCurrentUser()" @click="remove" squared variant="outline-primary">Verwijderen</b-button>
 			</div>
           </b-card-text>
         </b-card-body>
@@ -35,6 +35,20 @@ export default {
   methods: {
 	remove(){
         Meteor.call("stls.remove", this.stl._id);
+	},
+	ownedByCurrentUser(){
+		return Meteor.user()._id == this.stl.owner;
+	}
+  },
+  filters: {
+	creator: function(owner){
+		if (owner){
+			if ('username' in owner) return owner.username;
+			if ('email' in owner) return owner.email;
+			if ('services' in owner){
+				if ('google' in owner.services) return owner.services.google.email;
+			}
+		}
 	}
   },
   meteor: {
