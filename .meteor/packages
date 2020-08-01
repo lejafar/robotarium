@@ -23,3 +23,5 @@ static-html
 accounts-ui
 accounts-password
 vuejs:blaze-integration
+accounts-google
+google-config-ui

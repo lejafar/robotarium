@@ -1,14 +1,20 @@
 <template>
-    <div>
-    <header>
-      <h1>Stl list</h1>
-    </header>
-	<blaze-template template="loginButtons" tag="span"></blaze-template>
-	<b-form-file @change="handleSubmit"></b-form-file>
-    <ul>
-	  <Stl v-for="stl in stls" v-bind:key="stl._id" v-bind:stl="stl" />
-    </ul>
-    </div>
+	<div class="container">
+		<div class="container">
+			<div class="header">
+                <h1>Stl list</h1>
+			</div>
+			<div>
+			<div class="row justify-content-md-center">
+				<div class="col-10">
+                    <blaze-template template="loginButtons" tag="span"></blaze-template>
+                    <b-form-file @change="handleSubmit" squared ></b-form-file>
+                    <Stl v-for="stl in stls" v-bind:key="stl._id" v-bind:stl="stl" />
+				</div>
+			</div>
+			</div>
+		</div>
+	</div>
 </template>
 
 <script>

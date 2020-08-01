@@ -6,9 +6,21 @@ export const Stls = new Mongo.Collection('stls');
 
 if (Meteor.isServer) {
     // This code only runs on the server
-    Meteor.publish('stls', function pagesPublication() {
-        return Stls.find({ owner: this.userId });
+    Meteor.publish('stls', function stlsPublication() {
+        //return Stls.find({ owner: this.userId });
+        return Stls.find({});
     });
+}
+
+if (Meteor.isClient) {
+ Meteor.subscribe('getUser')
+}
+
+
+if (Meteor.isServer) {
+ Meteor.publish('getUser', function(userId) {
+   return Meteor.users.findOne(userId, {fields:{username:1,emails:1}})
+ })
 }
 
 Meteor.methods({
@@ -40,5 +52,5 @@ Meteor.methods({
         check(stlId, String);
         check(content, String);
         Stls.update(stlId, { $set: { content: content } });
-    },
+    }
 });

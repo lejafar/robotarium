@@ -15,6 +15,11 @@ export default {
 
 <style>
 
+:root {
+  --main-fg-color: #ffffff;
+  --main-bg-color: #616497;
+}
+
 @font-face {
     font-family: 'PixChicago';
     src: url('/pixChicago.eot');
@@ -40,8 +45,8 @@ h1 {
 
 body {
 	font-family: monospace;
-	color: #ffffff;
-	background-color: #616497;
+	color: var(--main-fg-color);
+	background-color: var(--main-bg-color);
 	font-size: 1.2rem;
 }
 </style>
