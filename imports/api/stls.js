@@ -31,18 +31,30 @@ Meteor.methods({
 			content,
             createdAt: new Date(),
             owner: this.userId,
+			readyToPrint: false
         });
     },
     'stls.remove'(stlId) {
         check(stlId, String);
         if (this.userId != Stls.findOne(stlId).owner) {
-            throw new Meteor.Error('not-authorized to remove this part');
+            throw new Meteor.Error('not-authorized to remove this stl');
         }
         Stls.remove(stlId);
     },
     'stls.updateContent'(stlId, content) {
         check(stlId, String);
         check(content, String);
+        if (this.userId != Stls.findOne(stlId).owner) {
+            throw new Meteor.Error('not-authorized to update this stl');
+        }
         Stls.update(stlId, { $set: { content: content } });
+    },
+    'stls.updateReadyToPrint'(stlId, readyToPrint) {
+        check(stlId, String);
+        check(readyToPrint, Boolean);
+        if (this.userId != Stls.findOne(stlId).owner) {
+            throw new Meteor.Error('not-authorized to update this stl');
+        }
+        Stls.update(stlId, { $set: { readyToPrint: readyToPrint } });
     }
 });

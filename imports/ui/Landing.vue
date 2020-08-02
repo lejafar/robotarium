@@ -6,7 +6,7 @@
 				<div class="typewriter">
 					<h1>ROBOTARIUM</h1>
 				</div>
-				<h2>Sociaal programmeer atelier voor toekomstige hacker(tje)s</h2>
+				<h2>Programmeer atelier voor toekomstige hacker(tje)s</h2>
 			</div>
 			<div>
 			<div class="row justify-content-md-center">
@@ -151,6 +151,6 @@ a[role=tab] {
 }
 
 .tab-content{
-	min-height: 100px;
+	min-height: 150px;
 }
 </style>

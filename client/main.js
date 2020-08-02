@@ -34,6 +34,13 @@ import App from '../imports/ui/App.vue';
 
 import router from '../imports/router'
 
+import VueMoment from 'vue-moment'
+import moment from 'moment-timezone'
+require('moment/locale/nl')
+Vue.use(VueMoment, {
+        moment,
+})
+
 Meteor.startup(() => {
       new Vue({
               el: '#app',
