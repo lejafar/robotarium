@@ -5,7 +5,7 @@
         <h1>3D</h1>
 		<div class="summary">
 		<p class="fragment" data-fragment-index="1">📖 beschrijven</p>
-		<p class="fragment" data-fragment-index="2">🖥  weergeven</p>
+		<p class="fragment" data-fragment-index="2">🖥  renderen</p>
 		<p class="fragment" data-fragment-index="3">👨‍🎨 ontwerpen</p>
 		<p class="fragment" data-fragment-index="4">🏭 printen</p>
 		</div>
@@ -57,8 +57,27 @@
 		</code></pre>
     </section>
     <section>
-        <h2>3D / weergeven</h2>
-		<iframe id="vs_iframe" src="https://www.viewstl.com/?embedded&orientation=bottom&bgcolor=white&color=red&clean=yes&url=https%3A%2F%2Flocalhost:3000/stls/konijn.stl" style="border:0;margin:0;width:100%;height:100%;"></iframe>
+        <h2>3D / renderen</h2>
+		<iframe class="model-viewer" src="https://www.viewstl.com/?embedded&orientation=bottom&bgcolor=white&color=red&clean=yes&url=http%3A%2F%2Frobotarium.be%2Fstls%2Fkonijn.stl&rotation=no"></iframe>
+    </section>
+    <section>
+        <h2>3D / renderen</h2>
+		<img src="/gifs/konijn.gif"></img>
+    </section>
+    <section>
+        <h2>3D / renderen</h2>
+		<img src="/images/konijn-render.png"></img>
+		<p>konijn gerenderd in PET (polyethyleen)</p>
+    </section>
+    <section>
+        <h2>3D / ontwerpen</h2>
+		<img src="/images/scanning.jpg"></img>
+		<p>3D scan bestaand voorwerp</p>
+    </section>
+    <section>
+        <h2>3D / ontwerpen</h2>
+		<img src="/images/thinkercad.png"></img>
+		<p>Ontwerp een 3D object in een CAD tekenprogramma</p>
     </section>
   </div>
 </div>
@@ -103,6 +122,11 @@ export default {
 
 .reveal .model-viewer {
 	min-height: 400px;
+}
+
+iframe.model-viewer {
+	height: 400px;
+	width: 100%;
 }
 
 </style>

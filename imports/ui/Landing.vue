@@ -13,7 +13,8 @@
 				<div class="col-8">
 				<b-tabs content-class="mt-3" align="center" class="tabs">
 					<b-tab title="Over" active>
-					<p>Gratis ateliers rond 3D-printing, programmeren, webdesign, electronica en machine learning deze zomer in de Blikfabriek in Hoboken </p></b-tab>
+					<p>Gratis workshops rond computers, webdesign, programmeren en 3D-printen. Kortom, alles wat van ver of dichtbij met elektronica en technologie te maken heeft! Deze zomer in de geweldige Blikfabriek in Hoboken.</p>
+					</b-tab>
 					<b-tab title="Workshops">
 						<ul>
 							<li>
