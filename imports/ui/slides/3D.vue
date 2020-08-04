@@ -4,7 +4,7 @@
     <section>
         <h1>3D</h1>
 		<div class="summary">
-		<p class="fragment" data-fragment-index="1">📖 beschrijven</p>
+		<p class="fragment" data-fragment-index="1">📖 representeren</p>
 		<p class="fragment" data-fragment-index="2">🖥  renderen</p>
 		<p class="fragment" data-fragment-index="3">👨‍🎨 ontwerpen</p>
 		<p class="fragment" data-fragment-index="4">🏭 printen</p>
@@ -12,17 +12,17 @@
 		</ul>
     </section>
     <section>
-        <h2>3D / beschrijven</h2>
+        <h2>3D / representeren</h2>
 		<img src="/images/stanford-rabbit.png"></img>
     </section>
     <section>
-        <h2>3D / beschrijven</h2>
+        <h2>3D / representeren</h2>
 		<img src="/images/stanford-rabbit-triangles.png"></img>
 		<p class="fragment" data-fragment-index="1">Triangular Mesh (TriMesh)</p>
 		<p class="fragment" data-fragment-index="2">💾 konijn.stl</p>
     </section>
     <section>
-        <h2>3D / beschrijven</h2>
+        <h2>3D / representeren</h2>
 		  <p class="fragment" data-fragment-index="1">💾 konijn.stl</p>
 		  <pre class="fragment" data-fragment-index="2"><code data-trim data-noescape>
   facet normal -2.497072e-01  3.351389e-01  9.084758e-01
@@ -58,11 +58,27 @@
     </section>
     <section>
         <h2>3D / renderen</h2>
+		<img src="/images/blender-donut.jpeg"></img>
+		<a href="https://www.reddit.com/r/BlenderDoughnuts">reddit.com/r/BlenderDoughnuts</a>
+    </section>
+    <section>
+        <h2>3D / renderen</h2>
+		<img src="/images/blender-1994.jpg"></img>
+		<p><a href="https://www.blender.org/">Blender</a></p>
+    </section>
+    <section>
+        <h2>3D / renderen</h2>
+		<img src="/images/render-or-real.png"></img>
+    </section>
+    <section>
+        <h2>3D / renderen</h2>
 		<iframe class="model-viewer" src="https://www.viewstl.com/?embedded&orientation=bottom&bgcolor=white&color=red&clean=yes&url=http%3A%2F%2Frobotarium.be%2Fstls%2Fkonijn.stl&rotation=no"></iframe>
+		<p>rendering door Threejs in de Browser</p>
     </section>
     <section>
         <h2>3D / renderen</h2>
 		<img src="/gifs/konijn.gif"></img>
+		<p>rendering door Fusion360</p>
     </section>
     <section>
         <h2>3D / renderen</h2>
@@ -71,13 +87,99 @@
     </section>
     <section>
         <h2>3D / ontwerpen</h2>
-		<img src="/images/scanning.jpg"></img>
-		<p>3D scan bestaand voorwerp</p>
+		<img class="fragment" data-fragment-index="1" src="/images/scanning.jpg"></img>
+		<p class="fragment" data-fragment-index="2">3D scan bestaand voorwerp</p>
     </section>
     <section>
         <h2>3D / ontwerpen</h2>
-		<img src="/images/thinkercad.png"></img>
-		<p>Ontwerp een 3D object in een CAD tekenprogramma</p>
+		<img class="fragment" data-fragment-index="1" src="/images/thinkercad.png"></img>
+		<p class="fragment" data-fragment-index="2">Ontwerp een 3D object in een CAD tekenprogramma (bv. <a href="https://www.tinkercad.com/">ThinkerCAD</a>)</p>
+    </section>
+    <section>
+        <h2>3D / printen</h2>
+		<img src="/images/slicer1.png"></img>
+		<p>Slicer</p>
+    </section>
+    <section>
+        <h2>3D / printen</h2>
+		<img src="/images/slicer2.png"></img>
+		<p>Slicer</p>
+    </section>
+    <section>
+        <h2>3D / printen</h2>
+		<img src="/images/slicer3.png"></img>
+		<p>Slicer</p>
+    </section>
+    <section>
+        <h2>3D / printen</h2>
+		<img src="/images/slicer4.png"></img>
+		<p>Slicer</p>
+    </section>
+    <section>
+        <h2>3D / printen</h2>
+		<img src="/images/slicer5.png"></img>
+		<p>Slicer</p>
+    </section>
+    <section>
+        <h2>3D / printen</h2>
+		<img src="/images/slicer6.png"></img>
+		<p>Slicer</p>
+    </section>
+    <section>
+        <h2>3D / printen</h2>
+		<img src="/gifs/fdm.gif"></img>
+		<p><a href="https://nl.wikipedia.org/wiki/Fused_deposition_modeling">FDM</a> 3d printer</p>
+    </section>
+    <section>
+        <h1>3D?</h1>
+		<div>
+		<p class="fragment" data-fragment-index="1">📖 representeren met een ... gemaakt uit ...</p>
+		<p class="fragment" data-fragment-index="2">🖥  computer toont ons het object door het te ...</p>
+		<p class="fragment" data-fragment-index="3">👨‍🎨 ontwerpen gebeurt via ... of ...</p>
+		<p class="fragment" data-fragment-index="4">🏭 om een object te 3d printen moet je het ...</p>
+		</div>
+		</ul>
+    </section>
+    <section>
+        <h2>3D / ontwerpen</h2>
+		<p>ga naar <a href="https://www.tinkercad.com/">tinkercard.com</a></p>
+		<img src="/images/start1.png"></img>
+    </section>
+    <section>
+        <h2>3D / ontwerpen</h2>
+		<p>ga naar <a href="https://www.tinkercad.com/">tinkercard.com</a></p>
+		<img src="/images/start2.png"></img>
+    </section>
+    <section>
+        <h2>3D / ontwerpen</h2>
+		<p>ga naar <a href="https://www.tinkercad.com/">tinkercard.com</a></p>
+		<img src="/images/start3.png"></img>
+    </section>
+    <section>
+        <h2>3D / ontwerpen</h2>
+		<p>ga naar <a href="https://www.tinkercad.com/">tinkercard.com</a></p>
+		<img src="/images/start4.png"></img>
+    </section>
+    <section>
+        <h2>3D / ontwerpen</h2>
+		<p>ga naar <a href="https://www.tinkercad.com/">tinkercard.com</a></p>
+		<img src="/images/start5.png"></img>
+    </section>
+    <section>
+        <h2>3D / ontwerpen</h2>
+		<p>ga naar <a href="https://www.tinkercad.com/">tinkercard.com</a></p>
+		<img src="/images/start6.png"></img>
+    </section>
+    <section>
+        <h2>3D / ontwerpen</h2>
+		<p>ga naar <a href="https://www.tinkercad.com/">tinkercard.com</a></p>
+		<img src="/images/start7.png"></img> </section> <section>
+		<p>meer tutorials vind je op youtube bv. <a href="https://youtu.be/NFMKRQSNMlk?t=140">youtu.be/NFMKRQSNMlk</a></p>
+	</section>
+    <section>
+        <h2>3D / ontwerpen</h2>
+		<p>ga naar <a href="http://robotarium.be/dingen">robotarium.be/dingen</a></p>
+		<img src="/images/dingen.png"></img>
     </section>
   </div>
 </div>
@@ -111,7 +213,7 @@ export default {
 .reveal ul > li:before { content: '🚀'; margin-left: -20px; margin-right: 10px; } 
 
 .reveal .summary > p{
-	max-width: 30%;
+	max-width: 35%;
     margin: auto;
     text-align: left;
 }

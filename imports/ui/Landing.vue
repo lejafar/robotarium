@@ -18,15 +18,15 @@
 					<b-tab title="Workshops">
 						<ul>
 							<li>
-							3D Printing
+							3D
 							<ul>
 								<li><router-link to="/slides/3d" target="_blank">Slides</router-link></li>
 								<li><router-link to="/dingen">Dingen</router-link></li>
 							</ul>
 							</li>
-							<li>Face Mapping</li>
 							<li>Web Design</li>
-							<li>RF Hacking</li>
+							<li>DeepFakes</li>
+							<li>Radio Frequency Hacking</li>
 						</ul>
 					</b-tab>
 				</b-tabs>
