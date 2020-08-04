@@ -6,14 +6,14 @@
 				<div class="typewriter">
 					<h1>ROBOTARIUM</h1>
 				</div>
-				<h2>Programmeer atelier voor toekomstige hacker(tje)s</h2>
+				<h2>Programmeer atelier voor toekomstige hackers</h2>
 			</div>
 			<div>
 			<div class="row justify-content-md-center">
 				<div class="col-8">
 				<b-tabs content-class="mt-3" align="center" class="tabs">
 					<b-tab title="Over" active>
-					<p>Gratis workshops rond computers, webdesign, programmeren en 3D-printen. Kortom, alles wat van ver of dichtbij met elektronica en technologie te maken heeft! Deze zomer in de geweldige Blikfabriek in Hoboken.</p>
+					<p>Workshops rond computers, webdesign, programmeren en 3D-printen. Kortom, alles wat van ver of dichtbij met elektronica en technologie te maken heeft! Deze zomer in de geweldige Blikfabriek in Hoboken.</p>
 					</b-tab>
 					<b-tab title="Workshops">
 						<ul>
