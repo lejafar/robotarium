@@ -1,15 +1,17 @@
 <template>
   <b-card no-body class="overflow-hidden">
     <b-row no-gutters>
-      <b-col md="3" class="viewer">
-		<model-stl :src="`${stl.content}`" :backgroundAlpha=".0"></model-stl>
+      <b-col md="4" class="viewer">
+		<model-stl :src="`${stl.content}`" :backgroundAlpha=".0" :rotation="{ x: -Math.PI / 4, y: 0, z: Math.PI / 8}" ></model-stl>
       </b-col>
-      <b-col md="9">
+      <b-col md="8">
         <b-card-body :title="stl.filename">
           <b-card-text>
 			<div class="stl-info">
-				<p>Mesh is opgebouwd uit <b>{{ triangleCount }}</b> driehoeken</p>
-				<p>{{ stl.createdAt | formatDate }} door <b>{{owner | creator }}</b></p>
+				<!-- <p>Mesh is opgebouwd uit <b>{{ triangleCount }}</b> driehoeken</p> -->
+				<p v-if="bboxX * bboxY * bboxZ > 1000">Volume: <b style="color:red">{{ bboxX * bboxY * bboxZ }} mm³ (TE GROOT)</b> ({{ bboxX }} mm * {{bboxY}} mm * {{bboxZ }} mm)</p>
+				<p v-else>Volume: <b>{{ bboxX * bboxY * bboxZ }}</b> mm³ ({{ bboxX }} mm * {{bboxY}} mm * {{bboxZ }} mm)</p>
+				<p>{{ stl.createdAt | formatDate }} geupload door <b>{{owner | creator }}</b></p>
 			</div>
 			<b-form inline>
 				<b-button :download="stl.filename" :href="stl.content" squared variant="outline-primary">Download</b-button>
@@ -37,7 +39,10 @@ export default {
   components: { ModelStl },
   data() {
     return {
-		triangleCount: 0
+		triangleCount: 0,
+		bboxX: 0.0,
+		bboxY: 0.0,
+		bboxZ: 0.0,
 	};
   },
   methods: {
@@ -51,6 +56,17 @@ export default {
 		var loader = new STLLoader();
 		loader.load(this.stl.content, ( geometry ) => {
 			this.triangleCount = geometry.attributes.position.count / 3
+		});
+	},
+	readBBoxVolume(){
+		var loader = new STLLoader();
+		const box = new Three.Box3();
+		loader.load(this.stl.content, ( geometry ) => {
+			geometry.computeBoundingBox();
+			const box = geometry.boundingBox;
+			this.bboxX = box.size().x
+			this.bboxY = box.size().y
+			this.bboxZ = box.size().z
 		});
 	},
 	setReadyToPrint(value){
@@ -82,6 +98,7 @@ export default {
   },
   mounted() {
 	this.readTriangleCount();
+	this.readBBoxVolume();
   }
 };
 </script>
