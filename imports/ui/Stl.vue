@@ -8,8 +8,8 @@
         <b-card-body :title="stl.filename">
           <b-card-text>
 			<div class="stl-info">
-				<!-- <p>Mesh is opgebouwd uit <b>{{ triangleCount }}</b> driehoeken</p> -->
-				<p v-if="bboxX * bboxY * bboxZ > 10000">Volume: <b style="color:red">{{ Math.round(bboxX * bboxY * bboxZ * 100) / 100 }} mm³ (TE GROOT)</b> ({{ bboxX }} mm * {{bboxY}} mm * {{bboxZ }} mm)</p>
+				<p>Mesh is opgebouwd uit <b>{{ triangleCount }}</b> driehoeken</p>
+				<p v-if="bboxX * bboxY * bboxZ > 10000">Volume: <b style="color:red">{{ Math.round(bboxX * bboxY * bboxZ * 100) / 100 }} mm³ (TE GROOT)</b> ({{ bboxX }} * {{bboxY}} * {{bboxZ }})</p>
 				<p v-else>Volume: <b>{{ bboxX * bboxY * bboxZ }}</b> mm³ ({{ bboxX }} mm * {{bboxY}} mm * {{bboxZ }} mm)</p>
 				<p>{{ stl.createdAt | formatDate }} geupload door <b>{{owner | creator }}</b></p>
 			</div>
