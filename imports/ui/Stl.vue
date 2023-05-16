@@ -9,7 +9,7 @@
           <b-card-text>
 			<div class="stl-info">
 				<!-- <p>Mesh is opgebouwd uit <b>{{ triangleCount }}</b> driehoeken</p> -->
-				<p v-if="bboxX * bboxY * bboxZ > 10000">Volume: <b style="color:red">{{ bboxX * bboxY * bboxZ }} mm³ (TE GROOT)</b> ({{ bboxX }} mm * {{bboxY}} mm * {{bboxZ }} mm)</p>
+				<p v-if="bboxX * bboxY * bboxZ > 10000">Volume: <b style="color:red">{{ Math.round(bboxX * bboxY * bboxZ * 100) / 100 }} mm³ (TE GROOT)</b> ({{ bboxX }} mm * {{bboxY}} mm * {{bboxZ }} mm)</p>
 				<p v-else>Volume: <b>{{ bboxX * bboxY * bboxZ }}</b> mm³ ({{ bboxX }} mm * {{bboxY}} mm * {{bboxZ }} mm)</p>
 				<p>{{ stl.createdAt | formatDate }} geupload door <b>{{owner | creator }}</b></p>
 			</div>
@@ -64,9 +64,9 @@ export default {
 		loader.load(this.stl.content, ( geometry ) => {
 			geometry.computeBoundingBox();
 			const box = geometry.boundingBox;
-			this.bboxX = Math.round(box.size().x) / 100
-			this.bboxY = Math.round(box.size().y) / 100
-			this.bboxZ = Math.round(box.size().z) / 100
+			this.bboxX = Math.round(box.size().x * 100) / 100
+			this.bboxY = Math.round(box.size().y * 100) / 100
+			this.bboxZ = Math.round(box.size().z * 100) / 100
 		});
 	},
 	setReadyToPrint(value){
