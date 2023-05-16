@@ -17,7 +17,9 @@
                     	<b-form-file squared placeholder="Selecteer een bestand" accept=".stl" browse-text="Zoeken" drop-placeholder="Sleep bestand naar hier..."></b-form-file>
 						<b-button type="submit" variant="outline-primary" squared>Upload</b-button>
 					</b-form>
-                    <Stl v-for="stl in stls" v-bind:key="stl._id" v-bind:stl="stl" />
+                <Stl v-for="stl in onlyMyStls(stls)" v-bind:key="`${stl._id}_myOwn`" v-bind:stl="stl" />
+                <hr style="border: 1px solid white;">
+                <Stl v-for="stl in onlyReadyToPrint(stls)" v-bind:key="stl._id" v-bind:stl="stl" />
 				</div>
 			</div>
       <div v-else class="row justify-content-md-center" >
@@ -51,16 +53,22 @@ export default {
 	  reader.onload = function () {
         Meteor.call("stls.insert", selectedFile.name, reader.result);
 	  };
-    }
+    },
+  onlyMyStls(stls) {
+    const userId = Meteor.userId();
+    return stls.filter(stl => stl.owner == userId);
+  },
+  onlyReadyToPrint(stls) {
+    return stls.filter(stl => stl.readyToPrint);
+  }
   },
   meteor: {
     $subscribe: {
       stls: []
     },
-	stls() {
+  stls() {
 	  return Stls.find({}, { sort: { createdAt: -1 } }).fetch();
-    }
-  },
+  }},
   mounted() {
     this.userIsLoggedIn = Meteor.loggingIn();
     if(!this.userIsLoggedIn){
