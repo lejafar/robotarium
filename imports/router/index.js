@@ -5,6 +5,7 @@ import PageList from '../ui/PageList'
 import PageEditor from '../ui/PageEditor'
 import Landing from '../ui/Landing'
 import Stls from '../ui/Stls'
+import AllStls from '../ui/AllStls'
 
 import ThreeD from '../ui/slides/3D'
 
@@ -22,6 +23,11 @@ export default new Router({
       path: '/dingen',
       name: 'dingen',
       component: Stls
+    },
+    {
+      path: '/alle-dingen',
+      name: 'alle-dingen',
+      component: AllStls
     },
     {
       path: '/pages',

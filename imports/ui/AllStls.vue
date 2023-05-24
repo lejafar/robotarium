@@ -7,19 +7,17 @@
 				</div>
 			</div>
 			<div class="header">
-        <h1>Dingen</h1>
+        <h1>Alle Dingen</h1>
 			</div>
 			<div>
 			<div v-if="this.userIsLoggedIn" class="row justify-content-md-center" >
 				<div class="col-12">
                     <blaze-template template="loginButtons" tag="span"></blaze-template>
-                    
 					<b-form inline @submit="handleSubmit" @submit.stop.prevent>
                     	<b-form-file squared placeholder="Selecteer een bestand" accept=".stl" browse-text="Zoeken" drop-placeholder="Sleep bestand naar hier..."></b-form-file>
 						<b-button type="submit" variant="outline-primary" squared>Upload</b-button>
 					</b-form>
-          <a href="/alle-dingen">toon alle dingen</a>
-                <Stl v-for="stl in onlyMyStls(stls)" v-bind:key="`${stl._id}_myOwn`" v-bind:stl="stl" />
+                <Stl v-for="stl in onlyReadyToPrint(stls)" v-bind:key="stl._id" v-bind:stl="stl" />
 				</div>
 			</div>
       <div v-else class="row justify-content-md-center" >
