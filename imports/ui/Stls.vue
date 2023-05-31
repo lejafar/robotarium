@@ -18,7 +18,7 @@
                     	<b-form-file squared placeholder="Selecteer een bestand" accept=".stl" browse-text="Zoeken" drop-placeholder="Sleep bestand naar hier..."></b-form-file>
 						<b-button type="submit" variant="outline-primary" squared>Upload</b-button>
 					</b-form>
-          <a href="/alle-dingen">toon alle dingen</a>
+          <!-- <a href="/alle-dingen">toon alle dingen</a> -->
                 <Stl v-for="stl in onlyMyStls(stls)" v-bind:key="`${stl._id}_myOwn`" v-bind:stl="stl" />
 				</div>
 			</div>
