@@ -15,8 +15,9 @@
 			</div>
 			<b-form inline>
 				<b-button :download="stl.filename" :href="stl.content" squared variant="outline-primary">Download</b-button>
-				<b-button v-if="ownedByCurrentUser()" @click="remove" squared variant="outline-primary">Verwijderen</b-button>
-				<b-button v-else disabled squared variant="outline-primary">Verwijderen</b-button>
+				<b-button @click="remove" squared variant="outline-primary">Verwijderen</b-button>
+				<!-- <b-button v-if="ownedByCurrentUser()" @click="remove" squared variant="outline-primary">Verwijderen</b-button>
+				<b-button v-else disabled squared variant="outline-primary">Verwijderen</b-button> -->
 				<b-form-checkbox v-if="ownedByCurrentUser()" v-model="stl.readyToPrint" @change="setReadyToPrint"> Klaar om te printen </b-form-checkbox>
 				<b-form-checkbox v-else v-model="stl.readyToPrint" disabled> Klaar om te printen </b-form-checkbox>
 			</b-form>

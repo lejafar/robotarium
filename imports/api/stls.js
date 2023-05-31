@@ -36,9 +36,9 @@ Meteor.methods({
     },
     'stls.remove'(stlId) {
         check(stlId, String);
-        if (this.userId != Stls.findOne(stlId).owner) {
-            throw new Meteor.Error('not-authorized to remove this stl');
-        }
+        // if (this.userId != Stls.findOne(stlId).owner) {
+        //     throw new Meteor.Error('not-authorized to remove this stl');
+        // }
         Stls.remove(stlId);
     },
     'stls.updateContent'(stlId, content) {
