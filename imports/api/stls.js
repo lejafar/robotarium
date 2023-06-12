@@ -10,6 +10,7 @@ if (Meteor.isServer) {
         //return Stls.find({ owner: this.userId });
         const options = {
             sort: {createdAt: -1},
+            fields: { content: 0}
             // limit: limit
         };
         if(printed != null && printed != ''){
@@ -42,6 +43,10 @@ Meteor.methods({
 			readyToPrint: false,
             printed: false
         });
+    },
+    'stls.resolve'(stlId) {
+        check(stlId, String);
+        return Stls.findOne(stlId);
     },
     'stls.remove'(stlId) {
         check(stlId, String);
