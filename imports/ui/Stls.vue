@@ -61,7 +61,7 @@ import { Accounts } from "meteor/accounts-base";
 import Stl from "./Stl.vue";
 import { Stls } from "../api/stls.js";
 
-STLS_PER_PAGE = 10;
+STLS_PER_PAGE = 5;
 export default {
   components: {
     Stl,
