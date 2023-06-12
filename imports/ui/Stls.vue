@@ -39,9 +39,9 @@
               />
             </div>
           </div>
-          <div class="row justify-content-md-center">
+          <!-- <div class="row justify-content-md-center">
             <b-button @click="showMore" style="margin: 30px" squared variant="outline-primary">Toon meer</b-button>
-          </div>
+          </div> -->
         </template>
         <div v-else class="row justify-content-md-center">
           <p>
@@ -97,7 +97,7 @@ export default {
     $subscribe: {
       stls: function () {
         // Here you can use Vue reactive properties
-        return [this.stlLimit, null]; // Subscription params
+        return [null]; // Subscription params
       },
     },
     stls() {
