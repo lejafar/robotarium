@@ -96,7 +96,7 @@ export default {
   },
   meteor: {
     $subscribe: {
-      stls: function () {
+      allReadystls: function () {
         // Here you can use Vue reactive properties
         return [this.printed]; // Subscription params
       },

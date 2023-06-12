@@ -5,8 +5,14 @@ import { check } from 'meteor/check';
 export const Stls = new Mongo.Collection('stls');
 
 if (Meteor.isServer) {
+
     // This code only runs on the server
-    Meteor.publish('stls', function stlsPublication(printed) {
+    Meteor.publish('myOwnStls', function stlsPublication(userId) {
+        return Stls.find({owner: userId}, {sort: {createdAt: -1}, fields: { content: 0}});
+    });
+
+    // This code only runs on the server
+    Meteor.publish('allReadystls', function stlsPublication(printed) {
         //return Stls.find({ owner: this.userId });
         const options = {
             sort: {createdAt: -1},
@@ -14,10 +20,10 @@ if (Meteor.isServer) {
             // limit: limit
         };
         if(printed != null && printed != ''){
-            if (printed === 'true') return Stls.find({printed: true}, options);
-            if (printed === 'false') return Stls.find({printed: {$ne: true}}, options);
+            if (printed === 'true') return Stls.find({printed: true, readyToPrint: true}, options);
+            if (printed === 'false') return Stls.find({printed: {$ne: true}, readyToPrint: true}, options);
         }
-        return Stls.find({}, options);
+        return Stls.find({readyToPrint: true}, options);
     });
 }
 

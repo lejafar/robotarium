@@ -95,10 +95,7 @@ export default {
   },
   meteor: {
     $subscribe: {
-      stls: function () {
-        // Here you can use Vue reactive properties
-        return [null]; // Subscription params
-      },
+      myOwnStls: [Meteor.userId()],
     },
     stls() {
       // var today = moment().startOf(Date());
