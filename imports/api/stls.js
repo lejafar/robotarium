@@ -14,10 +14,8 @@ if (Meteor.isServer) {
             sort: {createdAt: -1},
             limit: Math.min(limit, MAX_STLS)
         };
-        
-        check(printed, Boolean);
         if(printed != null){
-            return Stls.find({printed: printed}, options);
+            return Stls.find({printed: printed === 'true'}, options);
         }
         return Stls.find({}, options);
     });

@@ -28,7 +28,7 @@ export default new Router({
       path: '/alle-dingen',
       name: 'alle-dingen',
       component: AllStls,
-      props: route => ({ printed: route.query.printed === 'true'})
+      props: route => ({ printed: route.query.printed})
     },
     {
       path: '/pages',

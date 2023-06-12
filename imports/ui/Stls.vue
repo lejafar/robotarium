@@ -97,7 +97,7 @@ export default {
     $subscribe: {
       stls: function () {
         // Here you can use Vue reactive properties
-        return [this.stlLimit]; // Subscription params
+        return [this.stlLimit, null]; // Subscription params
       },
     },
     stls() {
