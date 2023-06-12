@@ -62,7 +62,7 @@ import { Accounts } from "meteor/accounts-base";
 import Stl from "./Stl.vue";
 import { Stls } from "../api/stls.js";
 
-STLS_PER_PAGE = 5;
+STLS_PER_PAGE = 50;
 export default {
   props: ["printed"],
   components: {
