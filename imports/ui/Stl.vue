@@ -2,8 +2,14 @@
   <b-card no-body class="overflow-hidden">
     <b-row no-gutters>
       <b-col md="4" class="viewer">
-		<model-stl :src="`${stl.content}`" :backgroundAlpha=".0" :rotation="{ x: -Math.PI / 4, y: 0, z: Math.PI / 8}"></model-stl>
-      </b-col>
+		<template v-if="viewPrinted">
+			<model-stl v-if="preview" :src="`${stl.content}`" :backgroundAlpha=".0" :rotation="{ x: -Math.PI / 4, y: 0, z: Math.PI / 8}"></model-stl>
+			<b-button v-else @click="showPreview" squared variant="outline-primary">Toon</b-button>
+		</template>
+		<template v-else>
+			<model-stl :src="`${stl.content}`" :backgroundAlpha=".0" :rotation="{ x: -Math.PI / 4, y: 0, z: Math.PI / 8}"></model-stl>
+		</template>
+	  </b-col>
       <b-col md="8">
         <b-card-body :title="stl.filename">
           <b-card-text>
@@ -41,6 +47,7 @@ export default {
   components: { ModelStl },
   data() {
     return {
+		preview: false,
 		triangleCount: 0,
 		bboxX: 0.0,
 		bboxY: 0.0,
@@ -53,6 +60,9 @@ export default {
   methods: {
 	remove(){
         Meteor.call("stls.remove", this.stl._id);
+	},
+	showPreview(){
+		this.preview = true
 	},
 	ownedByCurrentUser(){
 		return Meteor.user() && Meteor.user()._id == this.stl.owner;
