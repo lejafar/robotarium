@@ -2,7 +2,7 @@
   <b-card no-body class="overflow-hidden">
     <b-row no-gutters>
       <b-col md="4" class="viewer">
-		<model-stl :src="`${stl.content}`" :backgroundAlpha=".0" :rotation="{ x: -Math.PI / 4, y: 0, z: Math.PI / 8}" ></model-stl>
+		<model-stl :src="`${stl.content}`" :backgroundAlpha=".0" :rotation="{ x: -Math.PI / 4, y: 0, z: Math.PI / 8}"></model-stl>
       </b-col>
       <b-col md="8">
         <b-card-body :title="stl.filename">
@@ -20,6 +20,7 @@
 				<b-button v-else disabled squared variant="outline-primary">Verwijderen</b-button> -->
 				<b-form-checkbox v-if="ownedByCurrentUser()" v-model="stl.readyToPrint" @change="setReadyToPrint"> Klaar om te printen </b-form-checkbox>
 				<b-form-checkbox v-else v-model="stl.readyToPrint" disabled> Klaar om te printen </b-form-checkbox>
+				<b-form-checkbox v-if="viewPrinted" v-model="stl.printed" @change="setPrinted"> Geprint </b-form-checkbox>
 			</b-form>
           </b-card-text>
         </b-card-body>
@@ -36,7 +37,7 @@ import { STLLoader } from 'three/examples/jsm/loaders/STLLoader.js';
 import moment from "moment";
 
 export default {
-  props: ["stl"],
+  props: ["stl", "viewPrinted"],
   components: { ModelStl },
   data() {
     return {
@@ -78,6 +79,9 @@ export default {
 	},
 	setReadyToPrint(value){
 		Meteor.call("stls.updateReadyToPrint", this.stl._id, value);
+	},
+	setPrinted(value){
+		Meteor.call("stls.updatePrinted", this.stl._id, value);
 	}
   },
   filters: {

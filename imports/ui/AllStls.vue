@@ -7,7 +7,7 @@
         </div>
       </div>
       <div class="header">
-        <h1>Dingen</h1>
+        <h1>Alle Dingen</h1>
       </div>
       <div>
         <template v-if="this.userIsLoggedIn">
@@ -35,6 +35,7 @@
                 v-for="stl in onlyReadyToPrint(stls)"
                 v-bind:key="`${stl._id}_myOwn`"
                 v-bind:stl="stl"
+                v-bind:viewPrinted="true"
               />
             </div>
           </div>
@@ -63,6 +64,7 @@ import { Stls } from "../api/stls.js";
 
 STLS_PER_PAGE = 5;
 export default {
+  props: ["printed"],
   components: {
     Stl,
   },
@@ -96,7 +98,7 @@ export default {
     $subscribe: {
       stls: function () {
         // Here you can use Vue reactive properties
-        return [this.stlLimit]; // Subscription params
+        return [this.stlLimit, this.printed]; // Subscription params
       },
     },
     stls() {

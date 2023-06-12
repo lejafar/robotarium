@@ -8,12 +8,17 @@ MAX_STLS = 200
 
 if (Meteor.isServer) {
     // This code only runs on the server
-    Meteor.publish('stls', function stlsPublication(limit) {
+    Meteor.publish('stls', function stlsPublication(limit, printed) {
         //return Stls.find({ owner: this.userId });
         const options = {
             sort: {createdAt: -1},
             limit: Math.min(limit, MAX_STLS)
         };
+        
+        check(printed, Boolean);
+        if(printed != null){
+            return Stls.find({printed: printed}, options);
+        }
         return Stls.find({}, options);
     });
 }
@@ -37,7 +42,8 @@ Meteor.methods({
 			content,
             createdAt: new Date(),
             owner: this.userId,
-			readyToPrint: false
+			readyToPrint: false,
+            printed: false
         });
     },
     'stls.remove'(stlId) {
@@ -62,5 +68,10 @@ Meteor.methods({
             throw new Meteor.Error('not-authorized to update this stl');
         }
         Stls.update(stlId, { $set: { readyToPrint: readyToPrint } });
+    },
+    'stls.updatePrinted'(stlId, printed) {
+        check(stlId, String);
+        check(printed, Boolean);
+        Stls.update(stlId, { $set: { printed: printed } });
     }
 });

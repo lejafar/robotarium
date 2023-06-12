@@ -35,6 +35,7 @@
                 v-for="stl in onlyMyStls(stls)"
                 v-bind:key="`${stl._id}_myOwn`"
                 v-bind:stl="stl"
+                v-bind:viewPrinted="false"
               />
             </div>
           </div>
