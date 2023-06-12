@@ -4,11 +4,17 @@ import { check } from 'meteor/check';
 
 export const Stls = new Mongo.Collection('stls');
 
+MAX_STLS = 200
+
 if (Meteor.isServer) {
     // This code only runs on the server
-    Meteor.publish('stls', function stlsPublication() {
+    Meteor.publish('stls', function stlsPublication(limit) {
         //return Stls.find({ owner: this.userId });
-        return Stls.find({});
+        const options = {
+            sort: {createdAt: -1},
+            limit: Math.min(limit, MAX_STLS)
+        };
+        return Stls.find({}, options);
     });
 }
 
