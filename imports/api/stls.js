@@ -6,6 +6,9 @@ export const Stls = new Mongo.Collection('stls');
 
 if (Meteor.isServer) {
 
+    Stls.rawCollection().createIndex({"createdAt": -1});
+
+
     // This code only runs on the server
     Meteor.publish('myOwnStls', function stlsPublication(userId) {
         return Stls.find({owner: userId}, {sort: {createdAt: -1}, fields: { content: 0}});

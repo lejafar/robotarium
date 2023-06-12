@@ -147,9 +147,9 @@ export default {
       loader.load(this.content, (geometry) => {
         geometry.computeBoundingBox();
         const box = geometry.boundingBox;
-        this.bboxX = Math.round(box.size().x * 100) / 100;
-        this.bboxY = Math.round(box.size().y * 100) / 100;
-        this.bboxZ = Math.round(box.size().z * 100) / 100;
+        this.bboxX = Math.round(box.getSize().x * 100) / 100;
+        this.bboxY = Math.round(box.getSize().y * 100) / 100;
+        this.bboxZ = Math.round(box.getSize().z * 100) / 100;
         this.minX = box.min.x;
         this.minY = box.min.y;
         this.minZ = box.min.z;
