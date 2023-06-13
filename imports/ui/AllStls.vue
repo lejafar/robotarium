@@ -30,6 +30,7 @@
                   >Upload</b-button
                 >
               </b-form>
+              <p style="text-align: center;margin-top: 10px"><b>{{stls.length}}</b> ding(en) in totaal</p>
               <!-- <a href="/alle-dingen">toon alle dingen</a> -->
               <Stl
                 v-for="stl in onlyReadyToPrint(stls)"
